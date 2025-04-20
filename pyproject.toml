@@ -1,19 +1,27 @@
 [project]
 name = "project-a-backend"
 version = "0.1.0"
-description = ""
+description = "Demo App of Linear Clone"
 authors = [
     {name = "Andriy Sydorenko",email = "sidorenkoandrij217@gmail.com"}
 ]
 readme = "README.md"
-requires-python = ">=3.10"
-dependencies = [
-    "black (>=25.1.0,<26.0.0)",
-    "isort (>=6.0.1,<7.0.0)",
-    "ruff (>=0.11.6,<0.12.0)",
-    "psycopg2[binary] (>=2.9.10,<3.0.0)",
-    "fastapi[standard] (>=0.115.12,<0.116.0)"
-]
+package-mode = false
+dynamic = ["dependencies"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+black = ">=25.1.0,<26.0.0"
+isort = ">=6.0.1,<7.0.0"
+ruff = ">=0.11.6,<0.12.0"
+psycopg2 = {extras = ["binary"], version = "^2.9.10"}
+fastapi-admin = "^1.0.4"
+fastapi = {extras = ["standard"], version = "^0.115.12"}
+alembic = "^1.15.2"
+sqlalchemy = "^2.0.40"
+pytest = "^8.3.5"
+pydantic-settings = "^2.9.1"
+asyncpg = "^0.30.0"
 
 [tool.black]
 line-length = 119
@@ -23,8 +31,6 @@ exclude = '''
 /(
     \.git
   | \.hg
-  | \.mypy_cache
-  | \.tox
   | \.venv
   | \.alembic
 )/
@@ -35,6 +41,7 @@ profile = "black"
 
 [tool.ruff]
 line-length = 119
+exclude = ["**/__init__.py"]
 target-version = "py313"
 
 [tool.ruff.format]
