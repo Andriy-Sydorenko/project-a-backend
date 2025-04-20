@@ -1,0 +1,48 @@
+[project]
+name = "project-a-backend"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Andriy Sydorenko",email = "sidorenkoandrij217@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "black (>=25.1.0,<26.0.0)",
+    "isort (>=6.0.1,<7.0.0)",
+    "ruff (>=0.11.6,<0.12.0)",
+    "psycopg2[binary] (>=2.9.10,<3.0.0)",
+    "fastapi[standard] (>=0.115.12,<0.116.0)"
+]
+
+[tool.black]
+line-length = 119
+target-version = ['py313']
+include = '\.py$'
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | \.alembic
+)/
+'''
+
+[tool.isort]
+profile = "black"
+
+[tool.ruff]
+line-length = 119
+target-version = "py313"
+
+[tool.ruff.format]
+quote-style = "double"
+line-ending = "auto"
+docstring-code-format = true
+docstring-code-line-length = 119
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
