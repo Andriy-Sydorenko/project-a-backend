@@ -1,27 +1,30 @@
-[project]
+[tool.poetry]
 name = "project-a-backend"
 version = "0.1.0"
 description = "Demo App of Linear Clone"
-authors = [
-    {name = "Andriy Sydorenko",email = "sidorenkoandrij217@gmail.com"}
-]
+authors = ["Andriy Sydorenko <sidorenkoandrij217@gmail.com>"]
 readme = "README.md"
 package-mode = false
-dynamic = ["dependencies"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
 black = ">=25.1.0,<26.0.0"
 isort = ">=6.0.1,<7.0.0"
 ruff = ">=0.11.6,<0.12.0"
-psycopg2 = {extras = ["binary"], version = "^2.9.10"}
-fastapi-admin = "^1.0.4"
 fastapi = {extras = ["standard"], version = "^0.115.12"}
 alembic = "^1.15.2"
 sqlalchemy = "^2.0.40"
 pytest = "^8.3.5"
 pydantic-settings = "^2.9.1"
 asyncpg = "^0.30.0"
+argon2-cffi = "^23.1.0"
+pyjwt = "^2.10.1"
+cryptography = "^44.0.2"
+poetry-core = "^2.1.2"
+strawberry-graphql = {extras = ["debug-server"], version = "^0.266.0"}
+redis = "^6.0.0"
+starlette-admin = "^0.14.1"
+psycopg2-binary = "^2.9.10"
 
 [tool.black]
 line-length = 119
